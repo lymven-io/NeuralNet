@@ -13,7 +13,6 @@ public:
     Layer(int size);
 private:
     int size;
-
     vector<Neuron *> neurons;
 };
 
