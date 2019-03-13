@@ -5,11 +5,11 @@ Matrix *Layer::matrixifyVals()
     Matrix *m = new Matrix(1, this->neurons.size(), false);
     for (int i = 0; i < neurons.size(); i++)
     {
-        m->setValue(
-            1,
-            i,
-            this->neurons.at(i)->getVal());
+        double v = this->neurons.at(1)->getVal();
+        m->setValue(0, i, v);
     }
+
+    return m;
 }
 
 Matrix *Layer::matrixifyActivatedVals()
@@ -17,11 +17,9 @@ Matrix *Layer::matrixifyActivatedVals()
     Matrix *m = new Matrix(1, this->neurons.size(), false);
     for (int i = 0; i < neurons.size(); i++)
     {
-        m->setValue(
-            1,
-            i,
-            this->neurons.at(i)->getActivatedVal());
+        m->setValue(0, i, this->neurons.at(i)->getActivatedVal());
     }
+    return m;
 }
 
 Matrix *Layer::matrixifyDeridedVals()
@@ -29,11 +27,9 @@ Matrix *Layer::matrixifyDeridedVals()
     Matrix *m = new Matrix(1, this->neurons.size(), false);
     for (int i = 0; i < neurons.size(); i++)
     {
-        m->setValue(
-            1,
-            i,
-            this->neurons.at(i)->getDeridedVal());
+        m->setValue(0, i, this->neurons.at(i)->getDeridedVal());
     }
+    return m;
 }
 
 Layer::Layer(int size)

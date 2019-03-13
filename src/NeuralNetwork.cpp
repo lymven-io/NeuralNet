@@ -5,7 +5,11 @@ void NeuralNetwork::printToConsole()
     for(int i = 0; i < this->layers.size(); i++)
     {
         if(i == 0) {
-            Matrix *m = this->layers->matrixifyVals();
+            Matrix *m = this->layers.at(i)->matrixifyVals();
+            m->printToConsole();
+        }
+        else {
+            Matrix *m = this->layers.at(i)->matrixifyActivatedVals();
             m->printToConsole();
         }
     }
