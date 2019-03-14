@@ -17,6 +17,10 @@ public:
     Matrix *matrixifyVals();
     Matrix *matrixifyActivatedVals();
     Matrix *matrixifyDeridedVals();
+
+    vector<Neuron *> getNeurons() { return this->neurons; };
+    void setNeurons(vector<Neuron *> neurons) { this->neurons = neurons; };
+    
 private:
     int size;
     vector<Neuron *> neurons;
